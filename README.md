@@ -1,18 +1,26 @@
+mvn clean package to build fat-jar
+
+
+
 
 3 different runs, the one with abfs shows exception in flink console
 
-
+```
 flink run -yD security.kerberos.login.keytab=.....keytab -yD security.kerberos.login.principal=....  --detached  flink_adls_problem-1.0-SNAPSHOT.jar  hdfs:///tmp                                           
+
 hadoop fs -ls /tmp/data/2021-02-02--09
+```
 
 
+```
 flink run -yD security.kerberos.login.keytab=.....keytab -yD security.kerberos.login.principal=....  --detached  flink_adls_problem-1.0-SNAPSHOT.jar  /tmp/data
 shows files on worker nodes
+
 ls -l /tmp/data/2021-02-02--09/  
+```
 
 
-
-
+```
 flink run -yD security.kerberos.login.keytab=.....keytab -yD security.kerberos.login.principal=....  --detached  flink_adls_problem-1.0-SNAPSHOT.jar  abfs://examples-fs@cdpdlmain.dfs.core.windows.net/tmp 
 
 java.lang.UnsupportedOperationException: Recoverable writers on Hadoop are only supported for HDFS and for Hadoop version 2.7 or newer
@@ -34,4 +42,4 @@ java.lang.UnsupportedOperationException: Recoverable writers on Hadoop are only 
     at org.apache.flink.runtime.taskmanager.Task.doRun(Task.java:707)
     at org.apache.flink.runtime.taskmanager.Task.run(Task.java:532)
     at java.lang.Thread.run(Thread.java:748)
-
+```
