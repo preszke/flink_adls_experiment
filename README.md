@@ -13,7 +13,7 @@ to build fat-jar
 ```
 flink run -yD security.kerberos.login.keytab=.....keytab -yD security.kerberos.login.principal=....  --detached  flink_adls_problem-1.0-SNAPSHOT.jar  hdfs:///tmp                                           
 
-hadoop fs -ls /tmp/data/2021-02-02--09
+hadoop fs -ls /tmp/2021-02-02--09
 ```
 
 
