@@ -26,7 +26,7 @@ ls -l /tmp/data/2021-02-02--09/
 
 
 ```
-flink run -yD security.kerberos.login.keytab=.....keytab -yD security.kerberos.login.principal=....  --detached  flink_adls_problem-1.0-SNAPSHOT.jar  abfs://examples-fs@cdpdlmain.dfs.core.windows.net/tmp 
+flink run -yD security.kerberos.login.keytab=.....keytab -yD security.kerberos.login.principal=....  --detached  flink_adls_problem-1.0-SNAPSHOT.jar  abfs://...@.../tmp 
 
 java.lang.UnsupportedOperationException: Recoverable writers on Hadoop are only supported for HDFS and for Hadoop version 2.7 or newer
     at org.apache.flink.runtime.fs.hdfs.HadoopRecoverableWriter.<init>(HadoopRecoverableWriter.java:61)
