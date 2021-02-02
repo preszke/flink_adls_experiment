@@ -1,4 +1,9 @@
-mvn clean package to build fat-jar
+Program to demostrate StreamingFileSink problem with ADLS
+```
+mvn clean package
+```
+
+to build fat-jar
 
 
 
